@@ -1,0 +1,78 @@
+{
+  "contract": {
+    "type": "siteon",
+    "plan": "standard"
+  },
+  "basic": {
+    "business_type": "建築設計事務所",
+    "name_en": "MORI Architects",
+    "name_ja": "森建築設計事務所",
+    "tagline": "土地と暮らしの間に、建築を置く。",
+    "area": "鎌倉駅徒歩6分",
+    "address": "神奈川県鎌倉市御成町99-99 鎌倉アネックス2F",
+    "tel": "0467-99-1188",
+    "hours": "平日 10:00 - 18:00（土日祝は予約制）",
+    "email": "contact@mori-arch.example"
+  },
+  "philosophy": {
+    "headline": "土地と暮らしの間に、建築を置く。",
+    "body": "森建築設計事務所は、その土地が持つ歴史・地形・光・風と、住まう人の暮らしの輪郭を読み取り、その間にそっと建築を置くことを大切にしています。新築・リノベーション・店舗、規模を問わず、設計は対話から始まります。"
+  },
+  "works": [
+    {"title": "稲村ヶ崎の家", "year": 2025, "category": "新築住宅", "summary": "海風を抜けに、山影を背に。長期優良住宅認定を取得した木造2階建て。"},
+    {"title": "大町のリノベーション", "year": 2024, "category": "リノベーション", "summary": "築40年の古家を、家族3世代が同居する二世帯住宅へ。"},
+    {"title": "材木座のアトリエ兼住居", "year": 2024, "category": "店舗併用住宅", "summary": "アーティスト夫妻の制作・展示・暮らしを兼ねる小さな建築。"},
+    {"title": "由比ガ浜のセカンドハウス", "year": 2023, "category": "新築別荘", "summary": "海を眺めて過ごす週末のための、平屋の小さな箱。"},
+    {"title": "腰越のクリニック", "year": 2023, "category": "店舗", "summary": "通院する人が緊張せずに過ごせる、明るい木造クリニック。"},
+    {"title": "長谷の集合住宅", "year": 2022, "category": "新築共同住宅", "summary": "古都の景観に呼応する木造3階建て賃貸集合住宅。"}
+  ],
+  "strengths": [
+    {"title": "土地を読む", "body": "敷地の風・光・歴史を3ヶ月かけて読み取り、設計の起点にします。"},
+    {"title": "暮らしを聞く", "body": "ご家族との対話を重ね、必要なものと不要なものを丁寧に整理します。"},
+    {"title": "素材を選ぶ", "body": "国産材・地場産業・職人の技術を優先して選定。建てた後も育ちます。"},
+    {"title": "数字を出す", "body": "概算から実施設計、引き渡しまで、総工費の見通しを毎月更新します。"}
+  ],
+  "flow": [
+    {"step": 1, "name": "初回相談（無料）", "summary": "対面またはオンラインで土地・予算・暮らし方をお伺いします。"},
+    {"step": 2, "name": "敷地調査・現地視察", "summary": "風・光・隣地条件を確認。簡単な提案資料を作成。"},
+    {"step": 3, "name": "基本設計", "summary": "プラン・配置・大きな構造を検討。模型で空間感を共有。"},
+    {"step": 4, "name": "実施設計", "summary": "詳細図面・仕様書・概算見積書を作成。"},
+    {"step": 5, "name": "工務店選定・見積調整", "summary": "信頼できる地場工務店2社から相見積。"},
+    {"step": 6, "name": "工事監理", "summary": "週1回現場確認。週次レポートを共有。"},
+    {"step": 7, "name": "引き渡し・1年点検", "summary": "1年点検と季節ごとの暮らしの聞き取り。"}
+  ],
+  "profile": {
+    "name": "森 行雄",
+    "role": "代表",
+    "credentials": ["一級建築士（第999999号）", "JIA日本建築家協会会員", "長期優良住宅技術評価員"],
+    "career": "東京の設計事務所で10年勤務後、2014年に鎌倉で独立。新築・リノベーションを中心に累計58件の設計を手がける。",
+    "message": "建築は完成した時が始まりです。住まう人と一緒に育つ建築をつくりたいと考えています。"
+  },
+  "contact": {
+    "ui_type": "external_link",
+    "form_url": "https://mori-arch.example/contact",
+    "free_consultation": true
+  },
+  "design": {
+    "preset": "ホワイト × ナチュラル",
+    "philosophy_pattern": "B",
+    "hero_pattern": 1,
+    "works_pattern": "grid"
+  },
+  "options": {
+    "fee": false,
+    "blog": false,
+    "awards": false,
+    "lineup": false,
+    "performance": false,
+    "event": false,
+    "model_room": false,
+    "before_after": false,
+    "cost_guide": false,
+    "recruit": false
+  },
+  "photos": {
+    "status": "placeholder"
+  },
+  "reference_url": ""
+}
