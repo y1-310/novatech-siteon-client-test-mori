@@ -22,35 +22,31 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@400&display=swap" media="print" onload="this.media='all'">
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@400&display=swap">
-    <style>
-      .fade-up,
-      .scale-in {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-      .marquee-track {
-        animation: none !important;
-      }
-    
-    /* Works カード重なり防止 */
-    .work-card, .works-card, [class*="work-card"], [class*="works-item"] {
+  </noscript>
+  <style>
+    /* グリッドアイテムのmin-width=0（オーバーフロー防止） */
+    .philosophy-copy,
+    .philosophy-visuals,
+    .access-copy,
+    .access-visual {
+      min-width: 0;
+    }
+
+    /* Worksカード重なり防止 */
+    .works-card {
       position: relative;
       overflow: hidden;
     }
 
-  
-    /* Access テキスト見切れ修正 */
-    .access-info, .address-block, [class*="access-"] p {
-      overflow: visible;
-      word-break: keep-all;
+    /* Accessセクション テキスト折り返し */
+    .access-copy p,
+    .info-list dd,
+    .service-list li {
+      word-break: break-word;
       overflow-wrap: break-word;
-      min-width: 0;
     }
 
-  </style>
-  </noscript>
-  <style>
-    :root {
+        :root {
       color-scheme: only light;
       --bg: #FAFAF8;
       --bg-alt: #F2F0EC;
@@ -1116,19 +1112,19 @@
           </div>
           <div class="philosophy-visuals scale-in delay-1">
             <figure class="card-image">
-              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=640&h=480&fit=crop&q=65" alt="自然光のリビング空間" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=640&h=480&fit=crop&q=65" alt="自然光のリビング空間" width="640" height="480" loading="lazy">
             </figure>
             <div class="detail-grid">
               <article class="detail-card">
                 <figure>
-                  <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=480&h=320&fit=crop&q=65" alt="木材とコンクリートの素材感" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=480&h=320&fit=crop&q=65" alt="木材とコンクリートの素材感" width="480" height="320" loading="lazy">
                 </figure>
                 <h3>素材の静かな対比</h3>
                 <p>木の温度感とコンクリートの抑制を並置し、穏やかな緊張感を生み出します。</p>
               </article>
               <article class="detail-card">
                 <figure>
-                  <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=65" alt="打ち合わせスペース" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=65" alt="打ち合わせスペース" width="400" height="300" loading="lazy">
                 </figure>
                 <h3>対話から始める設計</h3>
                 <p>初回の相談では、敷地条件と暮らし方の優先順位を整理し、設計の骨格を共有します。</p>
@@ -1149,7 +1145,7 @@
         <div class="works-grid">
           <article class="works-card fade-up">
             <figure>
-              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=640&h=480&fit=crop&q=65" alt="稲村ヶ崎の家・海を望む木とコンクリートの住宅" width="640" height="480" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=640&h=480&fit=crop&q=65" alt="稲村ヶ崎の家・海を望む木とコンクリートの住宅" width="640" height="480" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Residence / Inamuragasaki</span>
@@ -1159,7 +1155,7 @@
           </article>
           <article class="works-card fade-up delay-1">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=640&h=480&fit=crop&q=65" alt="大町のリノベーション・コンクリートと木" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=640&h=480&fit=crop&q=65" alt="大町のリノベーション・コンクリートと木" width="640" height="480" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Renovation / Omachi</span>
@@ -1169,7 +1165,7 @@
           </article>
           <article class="works-card fade-up delay-2">
             <figure>
-              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=640&h=480&fit=crop&q=65" alt="材木座のアトリエ兼住居" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?w=640&h=480&fit=crop&q=65" alt="材木座のアトリエ兼住居" width="640" height="480" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Atelier House / Zaimokuza</span>
@@ -1179,7 +1175,7 @@
           </article>
           <article class="works-card fade-up">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=640&h=480&fit=crop&q=65" alt="由比ガ浜のセカンドハウス" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=640&h=480&fit=crop&q=65" alt="由比ガ浜のセカンドハウス" width="640" height="480" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Second House / Yuigahama</span>
@@ -1189,7 +1185,7 @@
           </article>
           <article class="works-card fade-up delay-1">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=640&h=480&fit=crop&q=65" alt="腰越のクリニック外観" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=640&h=480&fit=crop&q=65" alt="腰越のクリニック外観" width="640" height="480" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Clinic / Koshigoe</span>
@@ -1199,7 +1195,7 @@
           </article>
           <article class="works-card fade-up delay-2">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=640&h=480&fit=crop&q=65" alt="長谷の集合住宅" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=640&h=480&fit=crop&q=65" alt="長谷の集合住宅" width="640" height="480" loading="lazy">
             </figure>
             <div class="works-body">
               <span class="works-meta">Housing / Hase</span>
@@ -1222,7 +1218,7 @@
         <div class="strengths-grid">
           <article class="strength-card fade-up">
             <figure>
-              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=480&h=320&fit=crop&q=65" alt="設計図面と青写真" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=480&h=320&fit=crop&q=65" alt="設計図面と青写真" width="480" height="320" loading="lazy">
             </figure>
             <div class="strength-body">
               <span class="strength-meta">01 Planning Precision</span>
@@ -1232,7 +1228,7 @@
           </article>
           <article class="strength-card fade-up delay-1">
             <figure>
-              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=480&h=320&fit=crop&q=65" alt="建築模型のクローズアップ" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=480&h=320&fit=crop&q=65" alt="建築模型のクローズアップ" width="480" height="320" loading="lazy">
             </figure>
             <div class="strength-body">
               <span class="strength-meta">02 Material Balance</span>
@@ -1242,7 +1238,7 @@
           </article>
           <article class="strength-card fade-up delay-2">
             <figure>
-              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=480&h=320&fit=crop&q=65" alt="朝の自然光が差す空間" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=480&h=320&fit=crop&q=65" alt="朝の自然光が差す空間" width="480" height="320" loading="lazy">
             </figure>
             <div class="strength-body">
               <span class="strength-meta">03 Light Direction</span>
@@ -1263,7 +1259,7 @@
         </div>
         <div class="flow-grid">
           <figure class="flow-image scale-in">
-            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=480&h=320&fit=crop&q=65" alt="現地での打ち合わせ風景" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=480&h=320&fit=crop&q=65" alt="現地での打ち合わせ風景" width="480" height="320" loading="lazy">
           </figure>
           <div class="flow-copy fade-up delay-1">
             <h3>必要なのは、完成形ではなく、これから大切にしたい感覚です。</h3>
@@ -1305,10 +1301,10 @@
             </figure>
             <div class="mini-grid">
               <figure class="mini-visual">
-                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=65" alt="打ち合わせスペース" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=65" alt="打ち合わせスペース" width="400" height="300" loading="lazy">
               </figure>
               <figure class="mini-visual">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&q=65" alt="事務所エントランス" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&q=65" alt="事務所エントランス" width="400" height="300" loading="lazy">
               </figure>
             </div>
           </div>
@@ -1375,7 +1371,7 @@
             </ul>
           </div>
           <div class="access-visual scale-in">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=480&h=320&fit=crop&q=65" alt="設計事務所の内装" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=480&h=320&fit=crop&q=65" alt="設計事務所の内装" width="480" height="320" loading="lazy">
             <div class="access-map">
               <div>
                 <span class="notice">Meeting Lounge</span>
