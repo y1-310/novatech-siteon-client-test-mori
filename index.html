@@ -80,9 +80,22 @@
       font-weight: 300;
       line-height: 1.9;
       letter-spacing: 0.03em;
-      word-break: keep-all;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+    }
+
+    /* 見出し・コピー：文節途中の改行を防止（カード内・本文は除外） */
+    h1, h2,
+    .hero-copy,
+    .philosophy-text strong {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* 本文：通常の日本語改行 */
+    p, li, dd, span {
+      word-break: normal;
+      overflow-wrap: break-word;
     }
 
     img {
@@ -415,28 +428,28 @@
     .section-head h2,
     .cta-panel h2 {
       font-family: var(--font-serif);
-      font-size: clamp(2.1rem, 4vw, 3.5rem);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-weight: 400;
-      line-height: 1.2;
+      line-height: 1.3;
       letter-spacing: 0.05em;
     }
 
     .section-head p,
     .lead {
-      max-width: 52em;
       color: var(--text-mid);
+      font-size: 0.95rem;
+      line-height: 1.8;
     }
 
     .philosophy-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      grid-template-columns: 1fr 1fr;
       gap: 36px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .philosophy-copy {
-      display: grid;
-      gap: 24px;
+      display: flex;
     }
 
     .philosophy-text {
@@ -446,13 +459,15 @@
       background: linear-gradient(180deg, rgba(242, 240, 236, 0.85) 0%, rgba(250, 250, 248, 1) 100%);
       border: 1px solid var(--line);
       border-radius: var(--r);
+      flex: 1;
+      align-content: start;
     }
 
     .philosophy-text strong {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 2vw, 1.6rem);
       font-weight: 400;
-      line-height: 1.1;
+      line-height: 1.4;
       color: var(--accent);
     }
 
@@ -460,39 +475,42 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
+      margin-top: 24px;
     }
 
     .metric {
-      padding: 22px 20px;
-      border-top: 1px solid var(--accent);
-      border-bottom: 1px solid var(--line);
-      background: rgba(250, 250, 248, 0.84);
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      background: #fff;
     }
 
     .metric strong {
       display: block;
-      margin-bottom: 8px;
-      font-family: var(--font-display);
-      font-size: 2rem;
+      margin-bottom: 6px;
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
       font-weight: 400;
-      line-height: 1;
-      color: var(--accent);
+      line-height: 1.4;
+      color: var(--text);
     }
 
     .metric span {
       display: block;
       color: var(--text-mid);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      line-height: 1.7;
     }
 
     .philosophy-visuals {
-      align-self: stretch;
+      display: flex;
     }
 
     .philosophy-visuals .card-image {
-      height: 100%;
-      min-height: 280px;
-      max-height: 560px;
+      flex: 1;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      overflow: hidden;
     }
 
     .philosophy-visuals .card-image img {
@@ -525,6 +543,8 @@
     .access-visual img,
     .mini-visual img,
     .detail-card img {
+      width: 100%;
+      height: auto;
       aspect-ratio: 4 / 3;
       object-fit: cover;
     }
@@ -535,20 +555,32 @@
 
     .detail-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
       margin-top: 24px;
     }
 
     .detail-card {
-      display: grid;
-      grid-template-rows: auto 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 12px;
       padding: 18px;
       border: 1px solid var(--line);
       background: #fff;
       border-radius: var(--r);
+      min-width: 0;
+    }
+
+    .detail-card figure {
       overflow: hidden;
+      border-radius: var(--r);
+    }
+
+    .detail-card img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
     }
 
     .detail-card h3 {
@@ -560,16 +592,22 @@
     .works-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-auto-rows: auto;
+      align-items: start;
       gap: 22px;
     }
 
     .works-card {
       position: relative;
-      display: grid;
-      grid-template-rows: auto 1fr;
+      display: flex;
+      flex-direction: column;
       background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--r);
+    }
+
+    .works-card figure {
+      border-radius: var(--r) var(--r) 0 0;
       overflow: hidden;
     }
 
@@ -577,6 +615,8 @@
       display: grid;
       gap: 14px;
       padding: 20px;
+      flex: 1;
+      min-width: 0;
     }
 
     .works-meta,
@@ -1051,7 +1091,7 @@
       <div class="hero-inner">
         <div class="hero-copy fade-up">
           <span class="eyebrow">Kamakura Architecture Studio</span>
-          <h1>光と余白で、暮らしを設計する。</h1>
+          <h1>光と余白で、暮らしを設計する</h1>
           <p>中目黒の一級建築士事務所。住宅・店舗・リノベーションを手掛ける。土地の風、素材の温度、住まい手の時間感覚をすくい上げ、静かな品位が残る建築へと整えます。</p>
           <div class="hero-actions">
             <a class="button" href="#contact">相談を予約する</a>
@@ -1071,50 +1111,20 @@
       </div>
     </section>
 
-    <section class="marquee" aria-label="Marquee">
-      <div class="marquee-track">
-        <span>Light and Margin</span>
-        <span>Residential Architecture</span>
-        <span>Renovation Direction</span>
-        <span>Retail Interior Planning</span>
-        <span>Material Balance</span>
-        <span>Site Specific Design</span>
-        <span>Light and Margin</span>
-        <span>Residential Architecture</span>
-        <span>Renovation Direction</span>
-        <span>Retail Interior Planning</span>
-        <span>Material Balance</span>
-        <span>Site Specific Design</span>
-      </div>
-    </section>
 
     <section id="philosophy">
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker">Philosophy 01</span>
-          <h2>光の巡りと余白の深さが、建築の居心地を決める。</h2>
+          <h2>光の巡りと余白の深さが、建築の居心地を決める</h2>
           <p>Atelique Moraは、目立つ造形よりも、住み続けるほど輪郭が美しくなる空間を志向します。朝と夕方で違う表情を見せる光、木と左官と金属が静かに響き合う素材、そして暮らしの変化を受け止める余白。その均衡を、敷地の条件と対話しながら設計します。</p>
         </div>
         <div class="philosophy-grid">
           <div class="philosophy-copy">
             <div class="philosophy-text fade-up delay-1">
-              <strong>建築は、日々の所作を美しく支える器である。</strong>
+              <strong>建築は、日々の所作を美しく支える器である</strong>
               <p>海風の抜ける鎌倉の住宅地、奥行きの浅い都市部の店舗、骨格を活かすリノベーション。それぞれの条件に対し、私たちはまず余白の位置を決めます。人の動き、視線の抜け、家具の置かれ方、季節の陽の角度を重ねることで、静かだが弱くない空間の秩序をつくります。</p>
               <p>設計の初期段階では、求められる機能を単に面積へ落とし込むのではなく、どこで呼吸し、どこで集中し、どこで人を迎えるのかを丁寧に整理します。その結果として、無理のない平面と、長く飽きのこない佇まいが立ち上がります。</p>
-            </div>
-            <div class="metrics fade-up delay-2" aria-label="Studio metrics">
-              <div class="metric">
-                <strong>42棟</strong>
-                <span>竣工実績（住宅・店舗・改修）</span>
-              </div>
-              <div class="metric">
-                <strong>10-15%</strong>
-                <span>設計監理料の目安</span>
-              </div>
-              <div class="metric">
-                <strong>2012年</strong>
-                <span>鎌倉での事務所設立</span>
-              </div>
             </div>
           </div>
           <div class="philosophy-visuals">
@@ -1123,20 +1133,41 @@
             </figure>
           </div>
         </div>
+        <div class="metrics fade-up delay-2" aria-label="設計の特徴">
+          <div class="metric">
+            <strong>設計から監理まで一貫対応</strong>
+            <span>企画・基本設計・実施設計・工事監理を自社で一貫して行い、意図のブレない空間をお届けします。</span>
+          </div>
+          <div class="metric">
+            <strong>住宅から店舗・改修まで対応</strong>
+            <span>新築住宅を中心に、店舗設計やリノベーションまで幅広い用途に対応。敷地条件に応じた最適な提案を行います。</span>
+          </div>
+          <div class="metric">
+            <strong>鎌倉を拠点に14年の実績</strong>
+            <span>2012年の開設以来、湘南・鎌倉エリアを中心に42棟の設計を手掛けてきました。</span>
+          </div>
+        </div>
         <div class="detail-grid">
           <article class="detail-card">
             <figure>
-              <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=480&h=320&fit=crop&q=65" alt="木材とコンクリートの素材感" width="480" height="320" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=480&h=320&fit=crop&q=65" alt="自然素材のインテリア" width="480" height="320" loading="lazy">
             </figure>
-            <h3>素材の静かな対比</h3>
-            <p>木の温度感とコンクリートの抑制を並置し、穏やかな緊張感を生み出します。</p>
+            <h3>光と風を読む配置</h3>
+            <p>敷地の方角と周辺環境を踏まえ、自然光と通風を最大限に活かす窓と開口の配置を計画します。</p>
           </article>
           <article class="detail-card">
             <figure>
-              <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=65" alt="打ち合わせスペース" width="400" height="300" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=480&h=320&fit=crop&q=65" alt="設計打ち合わせ" width="480" height="320" loading="lazy">
             </figure>
-            <h3>対話から始める設計</h3>
-            <p>初回の相談では、敷地条件と暮らし方の優先順位を整理し、設計の骨格を共有します。</p>
+            <h3>暮らしに寄り添う動線</h3>
+            <p>家事・育児・仕事の流れを丁寧にヒアリングし、日常の動作が無理なくつながる間取りを描きます。</p>
+          </article>
+          <article class="detail-card">
+            <figure>
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=480&h=320&fit=crop&q=65" alt="経年変化する外壁" width="480" height="320" loading="lazy">
+            </figure>
+            <h3>時間とともに深まる素材</h3>
+            <p>無垢材や左官仕上げなど、年月を重ねるほど味わいが増す素材を選定し、長く愛される住まいを実現します。</p>
           </article>
         </div>
       </div>
@@ -1146,7 +1177,7 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker">Works 02</span>
-          <h2>住宅から商空間まで、土地の気配に応答した六つの実績。</h2>
+          <h2>住宅から商空間まで、土地の気配に応答した六つの実績</h2>
           <p>敷地の制約を隠すのではなく、計画の骨格へ変えていくこと。Atelique Moraの実績は、景色の切り取り方、素材の重ね方、動線の解き方に、その姿勢が現れています。</p>
         </div>
         <div class="works-grid">
@@ -1219,7 +1250,7 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker">Strengths 03</span>
-          <h2>構想力、検討精度、そして光の扱いにおける三つの強み。</h2>
+          <h2>構想力、検討精度、そして光の扱いにおける三つの強み</h2>
           <p>設計は美しいスケッチだけでは完結しません。Atelique Moraでは、最初の構想から施工段階の監理まで、空間の質を損なわないための検討を重ねます。</p>
         </div>
         <div class="strengths-grid">
@@ -1229,7 +1260,7 @@
             </figure>
             <div class="strength-body">
               <span class="strength-meta">01 Planning Precision</span>
-              <h3>条件整理からぶれない骨格をつくる。</h3>
+              <h3>条件整理からぶれない骨格をつくる</h3>
               <p>法規、予算、動線、景観条件を初期に整理し、設計の判断軸を明確にします。曖昧な希望を、計画の輪郭へ変換する工程を重視しています。</p>
             </div>
           </article>
@@ -1239,7 +1270,7 @@
             </figure>
             <div class="strength-body">
               <span class="strength-meta">02 Material Balance</span>
-              <h3>模型と素材検討で、仕上がりの密度を合わせる。</h3>
+              <h3>模型と素材検討で、仕上がりの密度を合わせる</h3>
               <p>平面だけでは見えにくい光の反射や素材の距離感を、模型とサンプルで確認します。空間の重心がぶれないよう、要素を削ぎながら整えます。</p>
             </div>
           </article>
@@ -1249,7 +1280,7 @@
             </figure>
             <div class="strength-body">
               <span class="strength-meta">03 Light Direction</span>
-              <h3>一日の光を読み、居心地の濃淡を設計する。</h3>
+              <h3>一日の光を読み、居心地の濃淡を設計する</h3>
               <p>朝の斜光、昼の拡散光、夕方の陰影。それぞれの時間帯で空間の見え方がどう変化するかを想定し、窓の位置と奥行きを調整します。</p>
             </div>
           </article>
@@ -1261,7 +1292,7 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker">Flow 04</span>
-          <h2>対話から監理まで、計画を静かに前へ進める設計の流れ。</h2>
+          <h2>対話から監理まで、計画を静かに前へ進める設計の流れ</h2>
           <p>相談時点で構えすぎる必要はありません。まだ曖昧な理想であっても、条件を一緒に読み解きながら、現実的で品位ある建築の姿へ整えていきます。</p>
         </div>
         <div class="flow-grid">
@@ -1269,7 +1300,7 @@
             <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=480&h=320&fit=crop&q=65" alt="現地での打ち合わせ風景" width="480" height="320" loading="lazy">
           </figure>
           <div class="flow-copy fade-up delay-1">
-            <h3>必要なのは、完成形ではなく、これから大切にしたい感覚です。</h3>
+            <h3>必要なのは、完成形ではなく、これから大切にしたい感覚です</h3>
             <p>初回相談では、用途、敷地、予算、完成希望時期を確認しながら、計画の難所と可能性を整理します。以降は、設計の節目ごとに判断事項を明確に共有し、進行に無理が生じないよう伴走します。</p>
             <div class="flow-steps">
               <div class="flow-step">
@@ -1298,7 +1329,7 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker">About 05</span>
-          <h2>海と街のあいだにある鎌倉から、静かな強さをもつ建築を考える。</h2>
+          <h2>海と街のあいだにある鎌倉から、静かな強さをもつ建築を考える</h2>
           <p>アトリーク・モラ設計事務所は、住宅、リノベーション、店舗設計を中心に、敷地の条件と使い手の感覚の間にある繊細な余白を設計対象としています。</p>
         </div>
         <div class="about-grid">
@@ -1306,14 +1337,6 @@
             <figure class="about-portrait">
               <img src="images/profile-mizunagi.jpg" alt="代表一級建築士 水凪恒一" width="400" height="500" loading="lazy">
             </figure>
-            <div class="mini-grid">
-              <figure class="mini-visual">
-                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&h=300&fit=crop&q=65" alt="打ち合わせスペース" width="400" height="300" loading="lazy">
-              </figure>
-              <figure class="mini-visual">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop&q=65" alt="事務所エントランス" width="400" height="300" loading="lazy">
-              </figure>
-            </div>
           </div>
           <div class="about-copy fade-up delay-1">
             <h3>代表 水凪恒一 / 一級建築士</h3>
@@ -1346,12 +1369,12 @@
       <div class="container">
         <div class="section-head fade-up">
           <span class="section-kicker">Access 06</span>
-          <h2>由比ガ浜の穏やかな通りに面した、小さな設計事務所です。</h2>
+          <h2>由比ガ浜の穏やかな通りに面した、小さな設計事務所です</h2>
           <p>初回相談は予約制です。敷地資料や図面がなくても、検討中の内容をお話しいただければ、進め方と必要な整理事項をお伝えします。</p>
         </div>
         <div class="access-grid">
           <div class="access-copy fade-up delay-1">
-            <h3>相談の入口を、できるだけ明快に。</h3>
+            <h3>相談の入口を、できるだけ明快に</h3>
             <p>鎌倉駅方面からも海側からもアクセスしやすい由比ガ浜一丁目に事務所を構えています。打ち合わせでは、用途やご予算に応じて、計画初期に確認すべき項目を整理したうえで、無理のない検討手順をご提案します。</p>
             <dl class="info-list">
               <div>
@@ -1399,7 +1422,7 @@
         <div class="cta-panel fade-up">
           <div>
             <span class="section-kicker" style="color: rgba(245,242,235,0.72);">Contact</span>
-            <h2>相談の初回整理から、設計の方向性をご提案します。</h2>
+            <h2>相談の初回整理から、設計の方向性をご提案します</h2>
             <p>住宅、店舗、リノベーションのいずれも、計画の初期段階で整理の質が変わります。ご希望の用途と時期、現時点での悩みをお聞かせください。<strong>Atelique Mora</strong>が、静かで強い建築の輪郭を描きます。</p>
           </div>
           <div class="cta-actions">
