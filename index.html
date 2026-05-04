@@ -52,6 +52,7 @@
       --text-mid: #5A5650;
       --text-light: #7A746C;
       --accent: #66745D;
+      --accent-rgb: 102, 116, 93;
       --line: #E0DCD6;
       --r: 4px;
       --container: 1180px;
@@ -343,17 +344,34 @@
       justify-content: center;
       min-height: 48px;
       padding: 0 22px;
-      border-radius: var(--r);
-      border: 1px solid transparent;
+      border-radius: 8px !important;
+      border: none;
       font-size: 0.88rem;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
     }
 
     .button {
-      background: var(--bg);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .hero .button {
+      background: #f5f2eb;
       color: var(--bg-dark);
+    }
+
+    .hero .button-subtle {
+      border: 1px solid rgba(245, 242, 235, 0.35) !important;
+      color: #f5f2eb !important;
+      background: rgba(245, 242, 235, 0.06);
+    }
+
+    .hero .button-subtle:hover,
+    .hero .button-subtle:focus-visible {
+      background: rgba(245, 242, 235, 0.16) !important;
+      color: #f5f2eb !important;
     }
 
     .button:hover,
@@ -364,9 +382,15 @@
     }
 
     .button-subtle {
-      border-color: rgba(245, 242, 235, 0.35);
-      color: #f5f2eb;
-      background: rgba(245, 242, 235, 0.06);
+      border: 1px solid var(--accent) !important;
+      color: var(--accent);
+      background: transparent;
+    }
+
+    .button-subtle:hover,
+    .button-subtle:focus-visible {
+      background: var(--accent) !important;
+      color: #fff !important;
     }
 
     .hero-aside {
@@ -374,7 +398,6 @@
       gap: 16px;
       padding: 26px;
       background: rgba(242, 240, 236, 0.12);
-      border: 1px solid rgba(245, 242, 235, 0.16);
       border-radius: var(--r);
       box-shadow: var(--shadow);
     }
@@ -540,9 +563,13 @@
 
     .philosophy-visuals .card-image {
       flex: 1;
-      border: 1px solid var(--line);
       border-radius: var(--r);
       overflow: hidden;
+      transition: background 0.25s ease;
+    }
+
+    .philosophy-visuals .card-image:hover {
+      background: rgba(var(--accent-rgb), 0.06);
     }
 
     .philosophy-visuals .card-image img {
@@ -876,11 +903,19 @@
 
     .cta-actions .button {
       background: #f5f2eb;
+      color: var(--bg-dark);
     }
 
     .cta-actions .button-subtle {
-      border-color: rgba(245, 242, 235, 0.28);
+      border: 1px solid rgba(245, 242, 235, 0.35) !important;
+      color: #f5f2eb !important;
       background: transparent;
+    }
+
+    .cta-actions .button-subtle:hover,
+    .cta-actions .button-subtle:focus-visible {
+      background: rgba(245, 242, 235, 0.12) !important;
+      color: #f5f2eb !important;
     }
 
     .site-footer {
