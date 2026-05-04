@@ -909,26 +909,37 @@
     .cta-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      align-items: start;
+      gap: 1rem;
+      align-items: center;
       justify-content: flex-start;
     }
 
+    .cta-actions .button,
+    .cta-actions .button-subtle {
+      padding: 1rem 2.5rem !important;
+      font-size: 0.85rem !important;
+      border-radius: 8px !important;
+      letter-spacing: 0.1em !important;
+      min-width: 200px;
+      text-align: center;
+    }
+
     .cta-actions .button {
-      background: #f5f2eb;
-      color: var(--bg-dark);
+      background: var(--accent);
+      color: #fff;
+      border: none;
     }
 
     .cta-actions .button-subtle {
-      border: 1px solid rgba(245, 242, 235, 0.35) !important;
-      color: #f5f2eb !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      color: rgba(255, 255, 255, 0.85) !important;
       background: transparent;
     }
 
     .cta-actions .button-subtle:hover,
     .cta-actions .button-subtle:focus-visible {
-      background: rgba(245, 242, 235, 0.12) !important;
-      color: #f5f2eb !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: #fff !important;
     }
 
     .site-footer {
@@ -1233,9 +1244,6 @@
               <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=640&h=480&fit=crop&q=65" alt="自然光のリビング空間" width="640" height="480" loading="lazy">
             </figure>
           </div>
-        </div>
-        <div class="philosophy-summary fade-up delay-2">
-          <p>企画から監理まで一貫対応。住宅・店舗・リノベーションまで、<br>鎌倉を拠点に設計を続けてきました。</p>
         </div>
         <div class="detail-grid">
           <article class="detail-card">
