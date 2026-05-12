@@ -35,7 +35,7 @@ jobs:
       - name: Puppeteer依存インストール
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium-browser
+          sudo apt-get install -y chromium
 
       - name: 業種判定（リポ名から）
         id: industry
